@@ -24,7 +24,7 @@ forgeDetails.withReader {
 	project.ext.forgeProps = new ConfigSlurper().parse prop
 }
 
-version = "1.7.10-1.0.0b"
+version = "1.8-2.0.0"
 group= "sourcecoded.core" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "sourcecodedcore"
 
@@ -56,8 +56,13 @@ processResources
     }
 }
 
+def commonManifest = {
+    attributes 'FMLCorePlugin': 'sourcecoded.core.core.launch.SCCCorePlugin'
+}
+
 jar {
 	classifier = "UNIVERSAL"
+	manifest commonManifest
 }
 
 task sourceJar(type: Jar) {

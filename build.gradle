@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-ext.forgeDetails = file "../gradle.properties"
+ext.forgeDetails = file "../gradle18.properties"
 forgeDetails.withReader {
 	def prop = new Properties()
 	prop.load(it)

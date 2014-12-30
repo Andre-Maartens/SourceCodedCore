@@ -58,6 +58,7 @@ processResources
 
 def commonManifest = {
     attributes 'FMLCorePlugin': 'sourcecoded.core.core.launch.SCCCorePlugin'
+	attributes 'SCCDeps': '[{"name":"JaciUtil", "revision":0}]'
 }
 
 jar {
@@ -73,6 +74,7 @@ task sourceJar(type: Jar) {
 task deobfJar(type: Jar) {
 	from sourceSets.main.output
 	classifier = "DEOBF"
+	manifest commonManifest
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {

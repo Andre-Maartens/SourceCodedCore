@@ -12,8 +12,8 @@ public class Dependency {
     public String name;
     public String downloadURL;
     public int revision;
-
-
+    public File attachedFile;
+    public boolean isNew = false;
 
     /* ATTACH TO FILE LOGIC */
 
@@ -21,6 +21,7 @@ public class Dependency {
         UserDefinedFileAttributeView view = Files.getFileAttributeView(file.toPath(), UserDefinedFileAttributeView.class);
         view.write("sourcecodedcore.dep.name", Charset.defaultCharset().encode(name));
         view.write("sourcecodedcore.dep.revision", Charset.defaultCharset().encode(String.valueOf(revision)));
+        this.attachedFile = file;
     }
 
     public static Dependency detach(File file) throws IOException {
@@ -28,7 +29,7 @@ public class Dependency {
         Dependency dep = new Dependency();
         dep.name = readKey(view, "sourcecodedcore.dep.name");
         dep.revision = Integer.parseInt(readKey(view, "sourcecodedcore.dep.revision"));
-
+        dep.attachedFile = file;
         return dep;
     }
 

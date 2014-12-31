@@ -58,7 +58,6 @@ processResources
 
 def commonManifest = {
     attributes 'FMLCorePlugin': 'sourcecoded.core.core.launch.SCCCorePlugin'
-	attributes 'SCCDeps': '[{"name":"JaciUtil", "revision":0}]'
 }
 
 jar {

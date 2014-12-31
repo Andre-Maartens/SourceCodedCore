@@ -15,7 +15,7 @@ public class SourceCodedCore extends DummyModContainer {
     public SourceCodedCore() {
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
-        meta.modId = SCCSharedData.getString("modid");
+        meta.modId = SCCSharedData.getString("id");
         meta.name = SCCSharedData.getString("name");
         meta.version = SCCSharedData.getString("version");
         meta.authorList = Arrays.asList("SourceCodedCore");

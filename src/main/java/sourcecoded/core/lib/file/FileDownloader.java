@@ -1,7 +1,5 @@
 package sourcecoded.core.lib.file;
 
-import sourcecoded.core.core.SourceCodedCore;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

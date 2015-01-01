@@ -1,5 +1,7 @@
 package sourcecoded.core.lib;
 
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.relauncher.FMLInjectionData;
 
 import java.io.File;
@@ -30,5 +32,16 @@ public class SCCSharedData {
 
     public static File getSCCRoot() {
         return (File) blackboard.get("sccRoot");
+    }
+
+    public static ModContainer getContainer(String modid) {
+        for (ModContainer container : Loader.instance().getActiveModList())
+            if (container.getModId().equals(modid)) return container;
+
+        return null;
+    }
+
+    public static boolean devEnvironment() {
+        return (Boolean)blackboard.get("devEnvironment");
     }
 }

@@ -31,7 +31,7 @@ public class ScreenshotShareCommand extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender p_71518_1_) {
-        return "/screenshot <imgur>";
+        return "/screenshot <imgur|whatis>";
     }
 
     public int getRequiredPermissionLevel() {
@@ -82,6 +82,9 @@ public class ScreenshotShareCommand extends CommandBase {
                         }
                     }
                 }).start();
+            } else if (args[0].equalsIgnoreCase("whatis")) {
+                Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("This tool is a screenshot function added by the mod 'SourceCodedCore'. It speeds up the saving of the screenshot by using multithreading, meaning your game doesn't freeze when trying to save a screenshot. In addition, it features an Imgur uploader, enabling easy sharing of screenshots."));
+                Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("If you're receiving two messages per screenshot, go into 'Controls' and set 'Take Screenshot' (in the miscellaneous section) to NONE (hit esc). This disables the vanilla screenshot saving, leaving this more optimized version to do the work instead."));
             }
         } else if (args.length == 0) {
             throw new WrongUsageException(getCommandUsage(sender));
@@ -140,7 +143,7 @@ public class ScreenshotShareCommand extends CommandBase {
 
     @SuppressWarnings("rawtypes")
     public List addTabCompletionOptions(ICommandSender sender, String[] str) {
-        if (str.length == 1) return getListOfStringsMatchingLastWord(str, "imgur");
+        if (str.length == 1) return getListOfStringsMatchingLastWord(str, "imgur", "whatis");
         return null;
     }
 }

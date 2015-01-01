@@ -13,7 +13,7 @@ public class PluginSetup implements IFMLCallHook {
     static ArrayList<ILaunchCallHook> hooks = new ArrayList<ILaunchCallHook>();
 
     static {
-        hooks.add(new DependencyLoader());
+        hooks.add(DependencyLoader.INSTANCE);
     }
 
     @Override

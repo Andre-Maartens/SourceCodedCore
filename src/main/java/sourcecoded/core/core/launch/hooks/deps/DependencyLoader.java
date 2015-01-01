@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.launchwrapper.LaunchClassLoader;
-import net.minecraftforge.fml.relauncher.ModListHelper;
 import sourcecoded.core.lib.SCCSharedData;
 import sourcecoded.core.lib.file.FileDownloader;
 import sourcecoded.core.lib.launch.ILaunchCallHook;
@@ -22,9 +21,12 @@ import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
-public class DependencyLoader implements ILaunchCallHook {
+public enum DependencyLoader implements ILaunchCallHook {
+    INSTANCE;
 
     SourceLogger depLogger = new SourceLogger("SourceCodedCore|DepLoader");
+
+    public List<Dependency> loadedDeps = new ArrayList<Dependency>();
 
     @Override
     public void call() {
@@ -81,6 +83,7 @@ public class DependencyLoader implements ILaunchCallHook {
             if (dep.attachedFile != null) {
                 try {
                     loader.addURL(dep.attachedFile.toURI().toURL());
+                    this.loadedDeps.add(dep);
                 } catch (MalformedURLException e) {
                     depLogger.error("Couldn't add a dep to classpath due to a Malformed URL. This should never happen. Weird.");
                 }

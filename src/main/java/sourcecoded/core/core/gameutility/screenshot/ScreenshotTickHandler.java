@@ -2,13 +2,11 @@ package sourcecoded.core.core.gameutility.screenshot;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.IChatComponent;
-
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
-
 import sourcecoded.core.core.client.Keybindings;
 import sourcecoded.core.lib.config.SCConfigManager;
 

@@ -118,7 +118,7 @@ public class SCScreenshotHandler {
                 }
             }).start();
 
-            String save = "[{\"text\":\"Screenshot saved! \"},{\"text\":\"%s\",\"color\":\"light_purple\",\"italic\":\"true\",\"underlined\":\"true\"},{\"text\":\" [imgur]\",\"color\":\"aqua\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/screenshot imgur %s\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":{\"text\":\"\",\"extra\":[{\"text\":\"Upload this screenshot to imgur\"}]}}}]";
+            String save = "[{\"text\":\"Screenshot saved! \"},{\"text\":\"%s\",\"color\":\"light_purple\",\"italic\":\"true\",\"underlined\":\"true\"},{\"text\":\" [imgur]\",\"color\":\"aqua\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/screenshot imgur %s\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":{\"text\":\"\",\"extra\":[{\"text\":\"Upload this screenshot to imgur\"}]}}}, {\"text\":\" [what is this?]\",\"color\":\"aqua\",\"italic\":\"true\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/screenshot whatis\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":{\"text\":\"\",\"extra\":[{\"text\":\"What is this?\"}]}}}]";
 
             save = String.format(save, file3.getName(), file3.getName());
 

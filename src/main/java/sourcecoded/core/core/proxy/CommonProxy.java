@@ -1,5 +1,7 @@
 package sourcecoded.core.core.proxy;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import sourcecoded.core.core.crash.CrashHandler;
 import sourcecoded.core.lib.proxy.IProxy;
 
 public class CommonProxy implements IProxy {
@@ -10,6 +12,7 @@ public class CommonProxy implements IProxy {
 
     @Override
     public void init() {
+        FMLCommonHandler.instance().registerCrashCallable(CrashHandler.INSTANCE);
     }
 
     @Override

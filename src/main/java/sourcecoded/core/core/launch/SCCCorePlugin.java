@@ -1,6 +1,5 @@
 package sourcecoded.core.core.launch;
 
-import net.minecraftforge.fml.relauncher.IFMLCallHook;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import sourcecoded.core.core.SourceCodedCore;
 import sourcecoded.core.lib.SCCSharedData;

@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "rotation=0": {"model": "sourcecodedcore:blank"},
+    "rotation=1": {"model": "sourcecodedcore:blank"},
+    "rotation=2": {"model": "sourcecodedcore:blank"},
+    "rotation=3": {"model": "sourcecodedcore:blank"},
+    "rotation=4": {"model": "sourcecodedcore:blank"},
+    "rotation=5": {"model": "sourcecodedcore:blank"},
+    "rotation=6": {"model": "sourcecodedcore:blank"},
+    "rotation=7": {"model": "sourcecodedcore:blank"},
+    "rotation=8": {"model": "sourcecodedcore:blank"},
+    "rotation=9": {"model": "sourcecodedcore:blank"},
+    "rotation=10": {"model": "sourcecodedcore:blank"},
+    "rotation=11": {"model": "sourcecodedcore:blank"},
+    "rotation=12": {"model": "sourcecodedcore:blank"},
+    "rotation=13": {"model": "sourcecodedcore:blank"},
+    "rotation=14": {"model": "sourcecodedcore:blank"},
+    "rotation=15": {"model": "sourcecodedcore:blank"}
+  }
+}
